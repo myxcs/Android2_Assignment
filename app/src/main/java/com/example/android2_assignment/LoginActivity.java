@@ -34,7 +34,7 @@ public class LoginActivity extends AppCompatActivity {
 
         nguoiDungDAO = new NguoiDungDAO(this);
 
-        //xử lí
+        //xử lí nút đăng nhập
         btLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -49,6 +49,13 @@ public class LoginActivity extends AppCompatActivity {
                 else {
                     Toast.makeText(LoginActivity.this, "Đăng nhập thất bại", Toast.LENGTH_SHORT).show();
                 }
+            }
+        });
+        //xử lí nút đăng kí
+        tvSignUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
             }
         });
     }

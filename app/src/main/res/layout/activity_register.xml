@@ -1,9 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".RegisterActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Đăng kí"
+        android:layout_gravity="center_horizontal"
+        android:textSize="35dp"
+        android:textColor="@color/black"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="30dp"
+        ></TextView>
+    <TextView
+        android:layout_marginTop="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Full name:"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:layout_marginLeft="20dp"
+        ></TextView>
+    <EditText
+        android:id="@+id/ed_fullname_register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nhập họ tên"
+        android:background="@drawable/custom_edittext"
+        android:layout_marginHorizontal="20dp"
+        ></EditText>
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Username:"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:layout_marginLeft="20dp"
+        ></TextView>
+    <EditText
+        android:id="@+id/ed_username_register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nhập username"
+        android:background="@drawable/custom_edittext"
+        android:layout_marginHorizontal="20dp"
+        ></EditText>
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Password:"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:layout_marginLeft="20dp"
+        ></TextView>
+    <EditText
+        android:id="@+id/ed_password_register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nhập password"
+        android:layout_marginHorizontal="20dp"
+        android:background="@drawable/custom_edittext"
+        android:inputType="textPassword"
+        ></EditText>
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Re Enter Password:"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:layout_marginLeft="20dp"
+        ></TextView>
+    <EditText
+        android:id="@+id/ed_repassword_register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nhập lại password"
+        android:layout_marginHorizontal="20dp"
+        android:background="@drawable/custom_edittext"
+        android:inputType="textPassword"
+        ></EditText>
+    <Button
+        android:id="@+id/bt_register"
+        android:text="Sign up"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="40dp"
+        android:layout_width="200dp"
+        android:background="@drawable/custom_button"
+        app:backgroundTint="@null"
+        android:layout_height="wrap_content"
+        ></Button>
+
+    <TextView
+        android:id="@+id/tv_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/log_in"
+        android:textSize="15sp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:textColor="#2196F3"
+        ></TextView>
+</LinearLayout>
