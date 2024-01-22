@@ -47,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
 
         //set default fragment
         getSupportFragmentManager().beginTransaction().replace(R.id.linear_layout, new ProductFragment()).commit();
+        getSupportActionBar().setTitle("Sản phẩm");
 
         //xử lí navigations
         navigationView.setNavigationItemSelectedListener(
@@ -62,6 +63,9 @@ public class MainActivity extends AppCompatActivity {
                             fragment = new ProductFragment();
                         }
                         getSupportFragmentManager().beginTransaction().replace(R.id.linear_layout, fragment).commit();
+
+                        //chỉnh title toolbar theo fragement
+                        getSupportActionBar().setTitle(item.getTitle());
                         drawer.closeDrawer(GravityCompat.START);
                         return false;
                      }

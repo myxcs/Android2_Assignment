@@ -14,5 +14,7 @@
     <string name="qu_n_m_t_kh_u"><u> Quên mật khẩu? </u></string>
     <string name="sign_up"> Tạo tài khoản ngay! <b>Đăng kí!</b></string>
     <string name="log_in"> Đã có tài khoản? <b>Đăng nhập!</b></string>
+    <string name="edit"><u>Chỉnh sửa</u></string>
+    <string name="delete"><u>Xóa</u></string>
 
 </resources>
