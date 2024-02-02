@@ -1,9 +1,12 @@
 package com.example.android2_assignment;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -61,8 +64,31 @@ public class LoginActivity extends AppCompatActivity {
         tvForgotPassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(LoginActivity.this, "Work in progress", Toast.LENGTH_SHORT).show();
+                showDialogForgot();
             }
         });
+    }
+    private void showDialogForgot() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        LayoutInflater inflater = getLayoutInflater();
+        View view = inflater.inflate(R.layout.dialog_forgot, null);
+        builder.setView(view);
+        AlertDialog alertDialog = builder.create();
+        alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+        alertDialog.show();
+
+        EditText edEmail = view.findViewById(R.id.ed_email);
+        Button btnSend = view.findViewById(R.id.btn_send);
+
+        btnSend.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String email = edEmail.getText().toString();
+                String matkhau = edPassword.getText().toString();
+                nguoiDungDAO.ForgotPassword(email);
+                Toast.makeText(LoginActivity.this, matkhau, Toast.LENGTH_SHORT).show();
+            }
+        });
+
     }
 }

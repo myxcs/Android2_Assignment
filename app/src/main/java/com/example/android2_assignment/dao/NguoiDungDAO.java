@@ -40,4 +40,15 @@ public class NguoiDungDAO {
         }
         return true;
     }
+    //forgot password
+    public String ForgotPassword(String username){
+        SQLiteDatabase sqLiteDatabase = dbHelper.getReadableDatabase();
+        Cursor cursor = sqLiteDatabase.rawQuery("SELECT MATKHAU FROM NGUOIDUNG WHERE TENDANGNHAP = ?", new String[]{username});
+        if(cursor.getCount() > 0){
+            cursor.moveToFirst();
+            return cursor.getString(0);
+        }
+        else
+            return "";
+    }
 }
