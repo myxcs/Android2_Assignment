@@ -23,7 +23,7 @@ public class SanPhamDAO {
         if (cursor.getCount() > 0){
             cursor.moveToFirst();
             do{
-               list.add(new Product(cursor.getInt(0),cursor.getString(1),cursor.getInt(2),cursor.getInt(3)));
+               list.add(new Product(cursor.getInt(0),cursor.getString(1),cursor.getInt(2),cursor.getInt(3),cursor.getString(4)));
             }while (cursor.moveToNext());
         }
         return list;
@@ -38,6 +38,7 @@ public class SanPhamDAO {
         contentValues.put("TENSP",product.getTensp());
         contentValues.put("GIABAN",product.getGiaban());
         contentValues.put("SOLUONG",product.getSoluong());
+        contentValues.put("HINHANH",product.getHinhanh());
 
         long check = sqLiteDatabase.insert("SANPHAM",null,contentValues);
         return check != -1;

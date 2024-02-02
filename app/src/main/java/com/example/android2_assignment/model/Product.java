@@ -5,6 +5,7 @@ public class Product {
     private String tensp;
     private int giaban;
     private int soluong;
+    private String hinhanh;
 
     public Product(int masp, String tensp, int giaban, int soluong) {
         this.masp = masp;
@@ -17,6 +18,21 @@ public class Product {
         this.tensp = tensp;
         this.giaban = giaban;
         this.soluong = soluong;
+    }
+
+    public Product(int masp, String tensp, int giaban, int soluong, String hinhanh) {
+        this.masp = masp;
+        this.tensp = tensp;
+        this.giaban = giaban;
+        this.soluong = soluong;
+        this.hinhanh = hinhanh;
+    }
+
+    public Product(String tensp, int giaban, int soluong, String hinhanh) {
+        this.tensp = tensp;
+        this.giaban = giaban;
+        this.soluong = soluong;
+        this.hinhanh = hinhanh;
     }
 
     public int getMasp() {
@@ -49,5 +65,13 @@ public class Product {
 
     public void setSoluong(int soluong) {
         this.soluong = soluong;
+    }
+
+    public String getHinhanh() {
+        return hinhanh;
+    }
+
+    public void setHinhanh(String hinhanh) {
+        this.hinhanh = hinhanh;
     }
 }

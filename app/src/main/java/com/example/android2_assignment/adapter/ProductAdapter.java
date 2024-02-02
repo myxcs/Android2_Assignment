@@ -4,11 +4,13 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.graphics.drawable.ColorDrawable;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -16,6 +18,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.android2_assignment.R;
 import com.example.android2_assignment.dao.SanPhamDAO;
 import com.example.android2_assignment.model.Product;
@@ -54,6 +57,11 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
 
          holder.tvQuantity.setText("Số lượng: " +list.get(position).getSoluong());
 
+         //xu ly hinh anh
+        if (!list.get(position).getHinhanh().equals("")) {
+            Glide.with(context).load(list.get(position).getHinhanh()).into(holder.ivHinhSP);
+        }
+
          //xu ly update delete
          holder.tvEdit.setOnClickListener(new View.OnClickListener() {
              @Override
@@ -78,6 +86,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView tvName, tvPrice, tvQuantity, tvEdit, tvDelete;
+        ImageView ivHinhSP;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             tvName = itemView.findViewById(R.id.tv_product_name);
@@ -85,6 +94,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
             tvQuantity = itemView.findViewById(R.id.tv_product_quantity);
             tvEdit = itemView.findViewById(R.id.tv_edit);
             tvDelete = itemView.findViewById(R.id.tv_delete);
+            ivHinhSP = itemView.findViewById(R.id.iv_hinhsp);
         }
     }
     private void showDialogDelete(String TenSP, int masp) {

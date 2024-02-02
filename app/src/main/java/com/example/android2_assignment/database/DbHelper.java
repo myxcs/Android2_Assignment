@@ -24,7 +24,8 @@ public class DbHelper extends SQLiteOpenHelper {
         String SanPham = "CREATE TABLE SANPHAM (MASP INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 "TENSP TEXT, " +
                 "GIABAN INTEGER, " +
-                "SOLUONG INTEGER)";
+                "SOLUONG INTEGER, " +
+                "HINHANH TEXT)";
         sqLiteDatabase.execSQL(SanPham);
 
         //add data
@@ -35,9 +36,9 @@ public class DbHelper extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL(addNguoiDung);
 
         String addSanPham = "INSERT INTO SANPHAM VALUES " +
-                "(1, 'Xúc xích', 10000, 10), " +
-                "(2, 'Bánh mì', 20000, 20), " +
-                "(3, 'Thịt nướng', 30000, 30)";
+                "(1, 'San pham 1', 100000, 10, '')," +
+                "(2, 'San pham 2', 200000, 20, ''), " +
+                "(3, 'San pham 3', 300000, 30, '')";
         sqLiteDatabase.execSQL(addSanPham);
     }
 

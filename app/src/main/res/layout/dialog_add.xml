@@ -68,6 +68,30 @@
             android:layout_marginBottom="10dp"
             android:hint="Số lượng sản phẩm"/>
 
+        <TextView
+            android:layout_width="match_parent"
+            android:textColor="@color/black"
+            android:layout_height="wrap_content"
+            android:text="Hình ảnh sản phẩm:"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:layout_marginHorizontal="20dp"/>
+
+        <ImageView
+            android:id="@+id/img_sanpham"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_image"/>
+        <TextView
+            android:id="@+id/tv_trangthai"
+            android:layout_margin="3dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="trạng thái"/>
         <LinearLayout
             android:layout_margin="20dp"
             android:layout_width="match_parent"
