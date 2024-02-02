@@ -2,6 +2,7 @@ package com.example.android2_assignment.adapter;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.graphics.drawable.ColorDrawable;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -65,7 +66,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
              @Override
              public void onClick(View v) {
                  //xu ly delete
-
+                 showDialogDelete(list.get(holder.getAdapterPosition()).getTensp(), list.get(holder.getAdapterPosition()).getMasp());
              }
          });
     }
@@ -86,6 +87,37 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
             tvDelete = itemView.findViewById(R.id.tv_delete);
         }
     }
+    private void showDialogDelete(String TenSP, int masp) {
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        builder.setTitle("Xác nhận xóa");
+        builder.setIcon(android.R.drawable.ic_dialog_alert);
+        builder.setMessage("Bạn muốn xoá sản phẩm \"" + TenSP + "\" ?");
+        builder.setCancelable(false);
+        builder.setPositiveButton("Có", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                boolean check = sanPhamDAO.xoaSP(masp);
+                if (check){
+                    Toast.makeText(context, "Xoá sản phẩm thành công", Toast.LENGTH_SHORT).show();
+                    loadData();
+                }
+                else {
+                    Toast.makeText(context, "Xoá sản phẩm thất bại", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+        builder.setNegativeButton("Không", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+    }
+
     private void showDialogUpdate(Product product) {
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
         LayoutInflater inflater = ((Activity)context).getLayoutInflater();
@@ -127,10 +159,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
                     if (check) {
                         Toast.makeText(context, "Cập nhật thành công", Toast.LENGTH_SHORT).show();
 
-                        //cap nhat lai list
-                        list.clear();
-                        list = sanPhamDAO.getDS();
-                        notifyDataSetChanged();
+                       loadData();
 
                         alertDialog.dismiss();
 
@@ -148,5 +177,11 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
                 alertDialog.dismiss();
             }
         });
+    }
+    private void loadData() {
+        //cap nhat lai list
+        list.clear();
+        list = sanPhamDAO.getDS();
+        notifyDataSetChanged();
     }
 }

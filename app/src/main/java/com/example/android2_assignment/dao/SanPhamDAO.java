@@ -62,4 +62,12 @@ public class SanPhamDAO {
         else
             return true;
     }
+    public boolean xoaSP(int masp){
+        SQLiteDatabase sqLiteDatabase = dbHelper.getWritableDatabase();
+        int check = sqLiteDatabase.delete("SANPHAM","MASP=?",new String[]{String.valueOf(masp)});
+        if (check <= 0)
+            return false;
+        else
+            return true;
+    }
 }
