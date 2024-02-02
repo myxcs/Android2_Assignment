@@ -13,6 +13,12 @@ public class Product {
         this.soluong = soluong;
     }
 
+    public Product(String tensp, int giaban, int soluong) {
+        this.tensp = tensp;
+        this.giaban = giaban;
+        this.soluong = soluong;
+    }
+
     public int getMasp() {
         return masp;
     }

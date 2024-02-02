@@ -1,5 +1,6 @@
 package com.example.android2_assignment.dao;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -26,5 +27,23 @@ public class SanPhamDAO {
             }while (cursor.moveToNext());
         }
         return list;
+    }
+
+    //them sp
+    public boolean themSPmoi(Product product){
+        SQLiteDatabase sqLiteDatabase = dbHelper.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+
+        //them du lieu vao content value
+        contentValues.put("TENSP",product.getTensp());
+        contentValues.put("GIABAN",product.getGiaban());
+        contentValues.put("SOLUONG",product.getSoluong());
+
+        long check = sqLiteDatabase.insert("SANPHAM",null,contentValues);
+        return check != -1;
+//         if(check == -1)
+//            return false;
+//        else
+//            return true;
     }
 }
