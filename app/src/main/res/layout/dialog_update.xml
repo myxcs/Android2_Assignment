@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="20dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="5dp">
+        <TextView
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chỉnh sửa sản phẩm"
+            android:layout_gravity="center"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_marginBottom="20dp"
+            android:textSize="30sp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nhập tên sản phẩm:"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:layout_marginHorizontal="20dp"/>
+        <EditText
+            android:id="@+id/ed_ten"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginBottom="10dp"
+            android:hint="Tên sản phẩm"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nhập giá sản phẩm:"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:layout_marginHorizontal="20dp"/>
+        <EditText
+            android:id="@+id/ed_gia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginBottom="10dp"
+            android:hint="Giá sản phẩm"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:textColor="@color/black"
+            android:layout_height="wrap_content"
+            android:text="Nhập số lượng sản phẩm:"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:layout_marginHorizontal="20dp"/>
+        <EditText
+            android:id="@+id/ed_soluong"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:inputType="number"
+            android:layout_marginBottom="10dp"
+            android:hint="Số lượng sản phẩm"/>
+
+        <LinearLayout
+            android:layout_margin="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_marginHorizontal="50dp"
+                android:id="@+id/btn_update"
+                android:text="Chỉnh sửa"
+                android:backgroundTint="#4CAF50"
+                android:gravity="center"
+                android:textSize="10dp"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                />
+            <Button
+                android:layout_marginHorizontal="50dp"
+                android:id="@+id/btn_cancel"
+                android:text="Hủy"
+                android:backgroundTint="#2196F3"
+                android:gravity="center"
+                android:textSize="10dp"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

@@ -61,7 +61,7 @@ public class ProductFragment extends Fragment {
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
         recProduct.setLayoutManager(layoutManager);
-        ProductAdapter adapter = new ProductAdapter(getContext(), list);
+        ProductAdapter adapter = new ProductAdapter(getContext(), list, sanPhamDAO);
         recProduct.setAdapter(adapter);
     }
     private void showDialogAdd(){

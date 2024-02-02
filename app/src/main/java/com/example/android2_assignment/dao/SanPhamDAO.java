@@ -46,4 +46,20 @@ public class SanPhamDAO {
 //        else
 //            return true;
     }
+
+    //chinh sua sp
+    public boolean chinhSuaSP(Product product){
+        SQLiteDatabase sqLiteDatabase = dbHelper.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+
+        contentValues.put("TENSP",product.getTensp());
+        contentValues.put("GIABAN",product.getGiaban());
+        contentValues.put("SOLUONG",product.getSoluong());
+
+        int check = sqLiteDatabase.update("SANPHAM",contentValues,"MASP=?",new String[]{String.valueOf(product.getMasp())});
+        if (check <= 0)
+            return false;
+        else
+            return true;
+    }
 }
