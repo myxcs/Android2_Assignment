@@ -87,6 +87,7 @@ public class LoginActivity extends AppCompatActivity {
                 String matkhau = edPassword.getText().toString();
                 nguoiDungDAO.ForgotPassword(email);
                 Toast.makeText(LoginActivity.this, matkhau, Toast.LENGTH_SHORT).show();
+                //abc
             }
         });
 
