@@ -35,9 +35,9 @@ public class DbHelper extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL(addNguoiDung);
 
         String addSanPham = "INSERT INTO SANPHAM VALUES " +
-                "(1, 'May tinh', 1000000, 10), " +
-                "(2, 'Laptop', 2000000, 20), " +
-                "(3, 'Dien thoai', 3000000, 30)";
+                "(1, 'Xúc xích', 10000, 10), " +
+                "(2, 'Bánh mì', 20000, 20), " +
+                "(3, 'Thịt nướng', 30000, 30)";
         sqLiteDatabase.execSQL(addSanPham);
     }
 

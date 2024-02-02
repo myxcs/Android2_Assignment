@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.Menu;
 
 import com.example.android2_assignment.fragment.AboutFragment;
+import com.example.android2_assignment.fragment.FragmentSettings;
 import com.example.android2_assignment.fragment.ProductFragment;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
@@ -59,6 +60,11 @@ public class MainActivity extends AppCompatActivity {
                             fragment = new ProductFragment();
                         } else if (item.getItemId() == R.id.nav_about) {
                             fragment = new AboutFragment();
+                        } else if (item.getItemId()==R.id.nav_settings) {
+                            fragment = new FragmentSettings();
+                        } else if (item.getItemId() == R.id.nav_exit) {
+                            finishAffinity();
+                            System.exit(0);
                         } else {
                             fragment = new ProductFragment();
                         }
