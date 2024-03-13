@@ -93,6 +93,7 @@ public class MainActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+    //hello world
 
     //cấp quyền (have no idea how it works)
     private void requestPermission() {
